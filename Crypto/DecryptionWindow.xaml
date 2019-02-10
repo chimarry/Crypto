@@ -1,0 +1,31 @@
+﻿<Window x:Class="Crypto.DecryptionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Crypto"
+        mc:Ignorable="d"
+        Background="#242434" Title="DecryptionMode" Height="450" Width="417.657">
+    <Grid Margin="0,0,55,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="104*"/>
+            <ColumnDefinition Width="262*"/>
+            <ColumnDefinition Width="72*"/>
+            <ColumnDefinition Width="5*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox  Name ="BoxFilePath" HorizontalAlignment="Left" Height="23" Margin="57,38,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="169" Grid.ColumnSpan="2"/>
+        <Button Content="Browse" Name="BtnBrowse" Background="#595959" Foreground="White"  FontWeight="Light" Margin="188,37,0,0" VerticalAlignment="Top"  Height="24" Grid.Column="1" Grid.ColumnSpan="3" Click="BtnBrowse_Click">
+
+        </Button>
+        <Button Content="Decrypt"  Name="BtnDecrypt" Background="#595959" Foreground="White"
+                HorizontalAlignment="Left" Margin="57,134,0,0" VerticalAlignment="Top" Width="169" Height="39" Grid.ColumnSpan="2" Click="BtnDecrypt_Click"/>
+        <Button Content="Compile" Name="BtnCompile"   Background="#595959" Foreground="White" 
+                HorizontalAlignment="Left" Margin="57,206,0,0" VerticalAlignment="Top" Width="169" Height="39" Grid.ColumnSpan="2" Click="BtnCompile_Click"/>
+        <Button Content="Execute" Name="BtnExecute" Background="#595959" Foreground="White"
+                HorizontalAlignment="Left" Margin="57,279,0,0" VerticalAlignment="Top" Width="169" Height="42" Grid.ColumnSpan="2" Click="BtnExecute_Click"/>
+        <Label Content="Path to encrypted file" Foreground="White" FontStyle="Italic" FontWeight="Light" HorizontalAlignment="Left" Margin="57,66,0,0" VerticalAlignment="Top" Width="169" Grid.ColumnSpan="2" Height="26"/>
+        <ComboBox  Name="SenderComboBox"  Grid.ColumnSpan="3" Grid.Column="1" HorizontalAlignment="Left" Margin="188,83,0,0" VerticalAlignment="Top" Width="84" />
+        <Label Content="Select sender" Foreground="White" FontStyle="Italic" FontWeight="Light" Grid.Column="1" HorizontalAlignment="Left" Margin="188,110,0,0" VerticalAlignment="Top" Grid.ColumnSpan="3" Width="84" Height="28"/>
+
+    </Grid>
+</Window>

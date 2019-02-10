@@ -1,0 +1,32 @@
+﻿<Window x:Class="Crypto.EncryptionWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Crypto"
+        mc:Ignorable="d"
+        Background="#242434" Title="EncryptionMode" Height="450" Width="323.811">
+    <Grid Margin="0,0,66,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <ComboBox HorizontalAlignment="Left" Name="UserComboBox"
+                   Margin="27,311,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+        <ComboBox HorizontalAlignment="Left" Margin="27,227,0,0" Name="HashComboBox"
+                  VerticalAlignment="Top" Width="120" Height="22"/>
+        <TextBox Name="BoxFilePath" HorizontalAlignment="Left" Height="23" Margin="27,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Browse" Name="BtnBrowse" Background="#595959" Foreground="White"
+              VerticalContentAlignment="Center" HorizontalContentAlignment="Center"  HorizontalAlignment="Left" Margin="171,56,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="BtnBrowse_Click" />
+        <ComboBox HorizontalAlignment="Left" Margin="27,145,0,0" Name="AlgComboBox"
+                  VerticalAlignment="Top" Width="120" Height="22"/>
+        <Button Content="Encrypt" Background="#595959" Foreground="White" Name="BtnEncrypt"
+                HorizontalAlignment="Left" Margin="171,382,0,0" VerticalAlignment="Top" Width="75" Height="20" Click="BtnEncrypt_Click"/>
+
+        <Label Content="Choose .cs file to encrypt" Foreground="White" FontWeight="Light" FontStyle="Italic" HorizontalAlignment="Left" Margin="27,84,0,0" VerticalAlignment="Top" Width="134" Height="26"/>
+        <Label Content="Encryption algorithm" Foreground="White" FontWeight="Light" FontStyle="Italic"  HorizontalAlignment="Left" Margin="27,172,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Label Content="Hashing algorithm" Foreground="White" FontWeight="Light" FontStyle="Italic"  HorizontalAlignment="Left" Margin="27,254,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+        <Label Content="Send to" Foreground="White" FontWeight="Light" FontStyle="Italic"  HorizontalAlignment="Left" Margin="27,338,0,0" VerticalAlignment="Top" Width="120" Height="26"/>
+
+    </Grid>
+</Window>
