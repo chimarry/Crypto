@@ -4,6 +4,8 @@ using Microsoft.CSharp;
 using System;
 using System.CodeDom.Compiler;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,11 +20,13 @@ using System.Windows.Shapes;
 
 namespace Crypto
 {
+
     /// <summary>
     /// Interaction logic for DecryptionWindow.xaml
     /// </summary>
     public partial class DecryptionWindow : Window
     {
+        public static string RUNNING_SCRIPT = "compile_execute.bat";
         private User loggedUser;
         private List<User> availableUsers;
         private string filePath;
@@ -76,12 +80,29 @@ namespace Crypto
 
         private void BtnCompile_Click(object sender, RoutedEventArgs e)
         {
-            
+            filePath = filePath.Remove(filePath.LastIndexOf('.'));
+            string name= @"C:\Windows\Microsoft.NET\Framework\v3.5\csc.exe /t:exe /out:"+filePath+".exe "+filePath+".cs ";
+            ExecuteCommand(name);
+
+        }
+        private void ExecuteCommand(string command)
+        {
+            File.WriteAllText(RUNNING_SCRIPT,command);
+            ProcessStartInfo psi = new ProcessStartInfo("cmd.exe")
+            {
+                UseShellExecute = false,
+                Arguments = "/c " + RUNNING_SCRIPT
+            };
+            Process proc = new Process() { StartInfo = psi };
+
+            proc.Start();
+            proc.WaitForExit();
+            proc.Close();
         }
 
         private void BtnExecute_Click(object sender, RoutedEventArgs e)
         {
-            
+            ExecuteCommand(filePath + ".exe");
         }
 
         private void BtnBrowse_Click(object sender, RoutedEventArgs e)
